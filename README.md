@@ -1,4 +1,12 @@
-# Chirpy Starter
+# DevDogs Blog
+
+This blog is my personal space to **capture experiences, notes, and knowledge** — a kind of journey log to remember what I’ve learned and done before.
+
+Homepage: [DevDogs Blog](https://devdogs.dmnsn.com)
+
+## Table of Contents
+
+
 
 [![Gem Version](https://img.shields.io/gem/v/jekyll-theme-chirpy)][gem]&nbsp;
 [![GitHub license](https://img.shields.io/github/license/cotes2020/chirpy-starter.svg?color=blue)][mit]
