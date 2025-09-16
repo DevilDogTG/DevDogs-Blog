@@ -1,6 +1,6 @@
 ---
 # the default layout is 'page'
-title: Hi, I’m **DevilDogTG** 👋
+title: Hi, I’m DevilDogTG 👋
 icon: fas fa-info-circle
 order: 4
 ---
