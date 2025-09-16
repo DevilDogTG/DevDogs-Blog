@@ -1,14 +1,13 @@
 ---
 layout: page
+title: Categories
 ---
 
-<div id="page">
-  <h1 class="dynamic-title">Categories</h1>
-  <div class="post-content">
-    <div class="cat-card">
-      <ul class="cat-tree">
-        {% include category_tree.html posts=site.posts depth=0 %}
-      </ul>
-    </div>
+<div class="post-content">
+  <div class="cat-card">
+    <ul class="cat-tree">
+      {% include category_tree.html posts=site.posts depth=0 %}
+    </ul>
   </div>
+  
 </div>
