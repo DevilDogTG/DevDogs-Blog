@@ -1,0 +1,14 @@
+---
+layout: page
+---
+
+<div id="page">
+  <h1 class="dynamic-title">Categories</h1>
+  <div class="post-content">
+    <p>Browse by hierarchical categories. Click to expand.</p>
+    <ul class="cat-tree">
+      {% include category_tree.html posts=site.posts depth=0 %}
+    </ul>
+  </div>
+</div>
+
