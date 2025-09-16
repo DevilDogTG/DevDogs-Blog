@@ -1,41 +1,51 @@
-{%- comment -%}
-  Recursive category tree renderer.
-  Usage:
-    {% include category_tree.html posts=site.posts depth=0 %}
-
-  - Groups posts by categories[depth] and recurses until no deeper level.
-  - Renders a nested <ul> list with counts per category (including descendants).
-{%- endcomment -%}
-
-{%- assign groups = include.posts | group_by_exp: 'p', 'p.categories[include.depth]' -%}
-{%- assign groups = groups | where_exp: 'g','g.name' | sort: 'name' -%}
-
-{%- for g in groups -%}
-  {%- assign next_depth = include.depth | plus: 1 -%}
-  {%- assign next_groups = g.items | group_by_exp: 'p', 'p.categories[next_depth]' -%}
-  {%- assign has_children = false -%}
-  {%- for ng in next_groups -%}
-    {%- if ng.name -%}
-      {%- assign has_children = true -%}
-      {%- break -%}
-    {%- endif -%}
-  {%- endfor -%}
+{%- comment -%} Recursive category tree renderer. Usage: {% include
+category_tree.html posts=site.posts depth=0 %} - Groups posts by
+categories[depth] and recurses until no deeper level. - Renders a nested
+<ul>
+  list with counts per category (including descendants). {%- endcomment -%} {%-
+  assign groups = include.posts | group_by_exp: 'p',
+  'p.categories[include.depth]' -%} {%- assign groups = groups | where_exp:
+  'g','g.name' | sort: 'name' -%} {%- for g in groups -%} {%- assign next_depth
+  = include.depth | plus: 1 -%} {%- assign child_groups = g.items |
+  group_by_exp: 'p', 'p.categories[next_depth]' -%} {%- assign child_groups =
+  child_groups | where_exp: 'cg','cg.name' -%} {%- assign child_count =
+  child_groups | size -%} {%- assign has_children = child_count > 0 -%} {%-
+  assign post_count = g.items | size -%}
 
   <li class="cat-level-{{ include.depth }}">
     {%- if has_children -%}
-      <details>
-        <summary>
+    <details>
+      <summary>
+        <span class="cat-title">
+          <i class="far fa-folder me-2" aria-hidden="true"></i>
           <span class="cat-name">{{ g.name }}</span>
-          <span class="cat-count">{{ g.items | size }}</span>
-        </summary>
-        <ul>
-          {%- include category_tree.html posts=g.items depth=next_depth -%}
-        </ul>
-      </details>
+        </span>
+        {%- assign category_label = 'categories' -%} {%- if child_count == 1 -%}
+        {%- assign category_label = 'category' -%} {%- endif -%} {%- assign
+        post_label = 'posts' -%} {%- if post_count == 1 -%} {%- assign
+        post_label = 'post' -%} {%- endif -%}
+        <span class="cat-meta">
+          <span class="cat-badge">{{ child_count }} {{ category_label }}</span>
+          <span class="cat-badge">{{ post_count }} {{ post_label }}</span>
+        </span>
+      </summary>
+      <ul>
+        {%- include category_tree.html posts=g.items depth=next_depth -%}
+      </ul>
+    </details>
     {%- else -%}
-      <span class="cat-name">{{ g.name }}</span>
-      <span class="cat-count">{{ g.items | size }}</span>
+    <div class="cat-leaf">
+      <span class="cat-title">
+        <i class="far fa-folder-open me-2" aria-hidden="true"></i>
+        <span class="cat-name">{{ g.name }}</span>
+      </span>
+      {%- assign post_label = 'posts' -%} {%- if post_count == 1 -%} {%- assign
+      post_label = 'post' -%} {%- endif -%}
+      <span class="cat-meta">
+        <span class="cat-badge">{{ post_count }} {{ post_label }}</span>
+      </span>
+    </div>
     {%- endif -%}
   </li>
-{%- endfor -%}
-
+  {%- endfor -%}
+</ul>
