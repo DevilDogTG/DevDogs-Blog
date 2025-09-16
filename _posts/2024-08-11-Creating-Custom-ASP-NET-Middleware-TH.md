@@ -2,7 +2,7 @@
 title: ทำ Custom AspNet Middleware ใช้เอง
 author: DevilDogTG
 date: 2024-08-11 08:00:00 +0700
-categories: [Tutorials, Developers, .NET]
+categories: [Tutorials, Developers, dotNET]
 tags: [c#, middleware, ภาษาไทย] # TAG names should always be lowercase
 ---
 
