@@ -1,8 +1,9 @@
 ---
 title: ทำ Custom AspNet Middleware ใช้เอง
+author: DevilDogTG
 date: 2024-08-11 08:00:00 +0700
 categories: [Tutorials, Developers, .NET]
-tags: [c#, middleware] # TAG names should always be lowercase
+tags: [c#, middleware, ภาษาไทย] # TAG names should always be lowercase
 ---
 
 Middleware มองง่ายๆ มันคือ script/program ของเราตัวนึง ที่แทรกอยู่ตรงกลางเวลามีการเรียก Request มาที่แอพพลิเคชั่นเรา ถ้ามองเป็นรูปจะประมาณนี้
