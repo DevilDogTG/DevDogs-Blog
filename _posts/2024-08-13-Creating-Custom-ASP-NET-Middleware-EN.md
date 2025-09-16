@@ -2,8 +2,8 @@
 title: "Creating Custom ASP.NET Middleware: A Step-by-Step Guide"
 author: DevilDogTG
 date: 2024-08-13 08:00:00 +0700
-categories: [Tutorials, Developers, dotNET]
-tags: [c#, middleware] # TAG names should always be lowercase
+categories: [Developers, .NET]
+tags: [tutorials, c#, middleware] # TAG names should always be lowercase
 ---
 
 Middleware in ASP.NET Core acts as a pipeline through which every HTTP request passes before reaching your application’s core logic. Think of it as a series of gates or filters that process incoming requests and outgoing responses.
