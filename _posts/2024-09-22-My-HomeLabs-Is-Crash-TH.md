@@ -2,7 +2,7 @@
 title: เมื่อ Home Labs เกิดปัญหา (Proxmox)
 author: DevilDogTG
 date: 2024-08-11 08:00:00 +0700
-categories: [Blogs]
+categories: [Blogs, Home Labs, Test]
 tags: [blogs, homelabs, proxmox, ภาษาไทย] # TAG names should always be lowercase
 ---
 
